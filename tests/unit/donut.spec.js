@@ -318,11 +318,12 @@ describe('Donut component', () => {
       const sections = [10, 20, 30].map(value => ({ value }));
       const wrapper = shallowMount(Donut, { propsData: { sections, hasLegend: true } });
 
-      const legendItemAmount = wrapper.findAll(el.LEGENT_ITEAM_AMOUNT)
+      const legendItemAmount = wrapper.findAll(el.LEGEND_ITEM_AMOUNT)
 
       sections.forEach((_, idx) => {
         expect(legendItemAmount.at(idx).text()).toContain(sections.reduce((acc, current) => acc + current))
       });
+      
     });
 
     it(`has the right total amount calculated`, () => {
