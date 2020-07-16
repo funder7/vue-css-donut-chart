@@ -12,7 +12,8 @@ export const el = {
 
   LEGEND: '.cdc-legend', // div that contains all the legend items
   LEGEND_ITEM: '.cdc-legend-item', // individual legend items
-  LEGEND_ITEM_COLOR: '.cdc-legend-item-color' // div that renders color for each legend item
+  LEGEND_ITEM_COLOR: '.cdc-legend-item-color', // div that renders color for each legend item
+  LEGEND_ITEM_AMOUNT: '.cdc-legend-item-amount' // div that contains the total for each legend item
 };
 
 /**
@@ -36,7 +37,7 @@ export const hextToCssRgb = hexString => {
  * @param {*} [height] - value for `window.innerHeight`.
  * @param {*} [width] - value for `window.innerWidth`
  */
-export const triggerResize = function(height, width) {
+export const triggerResize = function (height, width) {
   const resizeEvent = document.createEvent('Event');
   resizeEvent.initEvent('resize', true, true);
 

@@ -58,6 +58,11 @@
   margin-right: 0.5em;
 }
 
+/* The amount of each section */
+.cdc-legend-item-amount {
+  color: red
+}
+
 /* Container for all the sections of the donut */
 .cdc-sections {
   position: absolute;

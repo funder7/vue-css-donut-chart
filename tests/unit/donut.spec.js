@@ -200,7 +200,7 @@ describe('Donut component', () => {
     });
 
     it('does not run into error when section.value is not of number type', () => {
-      const spy = jest.spyOn(global.console, 'error').mockImplementation(() => {});
+      const spy = jest.spyOn(global.console, 'error').mockImplementation(() => { });
       const sections = [{ value: 10 }, { value: '' }];
 
       let error = false;
@@ -236,7 +236,7 @@ describe('Donut component', () => {
     });
 
     it('throws an error if sum of the section values exceed total', () => {
-      const spy = jest.spyOn(global.console, 'error').mockImplementation(() => {});
+      const spy = jest.spyOn(global.console, 'error').mockImplementation(() => { });
 
       const [total, sections] = [50, [{ value: 25 }, { value: 26 }]];
 
@@ -313,6 +313,31 @@ describe('Donut component', () => {
       expect(legend.exists()).toBe(false);
       expect(legendItems).toHaveLength(0);
     });
+
+    it(`shows the total count by default`, () => {
+      const sections = [10, 20, 30].map(value => ({ value }));
+      const wrapper = shallowMount(Donut, { propsData: { sections, hasLegend: true } });
+
+      const legendItemAmount = wrapper.findAll(el.LEGENT_ITEAM_AMOUNT)
+
+      sections.forEach((_, idx) => {
+        expect(legendItemAmount.at(idx).text()).toContain(sections.reduce((acc, current) => acc + current))
+      });
+    });
+
+    it(`has the right total amount calculated`, () => {
+      const sections = [10, 20, 30].map(value => ({ value }));
+      const wrapper = shallowMount(Donut, { propsData: { sections, hasLegend: true } });
+
+      const legendItems = wrapper.findAll(el.LEGEND_ITEM);
+      const legendItemColors = wrapper.findAll(el.LEGEND_ITEM_COLOR);
+
+      sections.forEach((_, idx) => {
+        expect(legendItems.at(idx).text()).toContain(`Section ${idx + 1}`);
+        expect(legendItemColors.at(idx).element.style.backgroundColor).toContain(hextToCssRgb(colors[idx]));
+      });
+    });
+
   });
 
   describe('"legend-placement" prop', () => {

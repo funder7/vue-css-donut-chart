@@ -18,6 +18,7 @@
       <span class="cdc-legend-item" v-for="(item, idx) in legend" :key="idx" :title="item.percent">
         <span class="cdc-legend-item-color" :style="item.styles"></span>
         <span>{{ item.label }}</span>
+        <span class="cdc-legend-item-amount" v-if="showTotal" :style="item.styles">{{ item.amount }}</span>
       </span>
     </div>
   </slot>
@@ -75,6 +76,7 @@ export default {
     },
     total: { type: Number, default: 100, validator: v => v > 0 },
     hasLegend: { type: Boolean, default: false },
+    showTotal: { type: Boolean, default: false },
     legendPlacement: {
       type: String,
       default: placement.BOTTOM,
