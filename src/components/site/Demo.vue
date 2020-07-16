@@ -200,6 +200,7 @@ export default {
       total,
 
       hasLegend: true,
+      showTotal: true,
       legendPlacement: 'bottom',
 
       textType: 'HTML',
@@ -221,7 +222,7 @@ export default {
       const {
         background, foreground,
         size, unit, thickness,
-        hasLegend, legendPlacement,
+        hasLegend, showTotal, legendPlacement,
         validatedSections, total,
         startAngle, autoAdjustTextSize
       } = this;
@@ -232,6 +233,7 @@ export default {
         size: computedSize > 0 ? computedSize : 200, unit,
         thickness: computedThickness >= 0 && computedThickness <= 100 ? computedThickness : 20,
         hasLegend, legendPlacement,
+        showTotal,
         autoAdjustTextSize,
         sections: validatedSections, total: computedTotal > 0 ? computedTotal : 100,
         startAngle: computedStartAngle || 0
