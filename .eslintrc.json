@@ -3,6 +3,7 @@
     "plugin:vue/essential",
     "airbnb-base"
   ],
+  "parser": "babel-eslint",
   "rules": {
     "comma-dangle": "off",
     "prefer-arrow-callback": "off",
@@ -67,7 +68,7 @@
       }
     ],
     "valid-typeof": "off",
-    "operator-linebreak": ["warn", "after"]
+    "operator-linebreak": [ "warn", "after" ]
   },
   "parserOptions": {
     "parser": "babel-eslint"
@@ -81,7 +82,8 @@
   "overrides": [
     {
       "files": [
-        "**/__tests__/*.{j,t}s?(x)"
+        "**/__tests__/*.{j,t}s?(x)",
+        "**/tests/unit/**/*.spec.{j,t}s?(x)"
       ],
       "env": {
         "jest": true

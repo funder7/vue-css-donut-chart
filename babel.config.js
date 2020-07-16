@@ -1,11 +1,12 @@
-let useBuiltIns = false;
-
-if (process.env.MODE === 'site') {
-  useBuiltIns = 'usage';
-}
-
 module.exports = {
   presets: [
-    ['@vue/app', { useBuiltIns }]
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "corejs": "3"
+      }
+    ],
+    '@vue/cli-plugin-babel/preset'
   ]
-};
+}
