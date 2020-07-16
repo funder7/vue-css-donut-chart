@@ -59,6 +59,14 @@
             <input id="has-legend" type="checkbox" v-model="hasLegend">
           </div>
           <div class="control">
+            <label for="show-total">Show totals?</label>
+            <input id="show-total" type="checkbox" v-model="showTotal">
+          </div>
+          <!-- <div class="control">
+            <label for="use-numbers">Use numbers?</label>
+            <input id="use-numbers" type="checkbox" v-model="useNumbers">
+          </div> -->
+          <div class="control">
             <label for="placement">Legend Placement</label>
             <select name="placement" v-model="legendPlacement" :disabled="!hasLegend">
               <option v-for="option in placementOptions" :key="option" :value="option">

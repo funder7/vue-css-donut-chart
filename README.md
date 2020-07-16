@@ -138,7 +138,7 @@ This will create a donut with 2 sections that take up 25% each.
   <vc-donut
     background="white" foreground="grey"
     :size="200" unit="px" :thickness="30"
-    has-legend legend-placement="top"
+    has-legend show-total legend-placement="top"
     :sections="sections" :total="100"
     :start-angle="0" :auto-adjust-text-size="true"
     @section-click="handleSectionClick">
@@ -197,6 +197,7 @@ Making the component look like a pie chart is as simple as setting the `thicknes
 | `start-angle` | Number | No | `0` | Angle measure in degrees where the first section should start. |
 | `total` | Number | No | `100` | Total for calculating the percentage for each section. |
 | `has-legend` | Boolean | No | `false` | Whether the donut should have a legend. |
+| `show-total` | Boolean | No | `false` | Enable to show the total of each section beside it's legend item. |
 | `legend-placement` | String | No | `'bottom'` | Where the legend should be placed. Valid values are `top`, `right`, `bottom` and `left`. Doesn't have an effect if `has-legend` is not true. |
 | `auto-adjust-text-size` | Boolean | No | `true` | Whether the font-size of the donut content is calculated automatically to fit the available space. |
 | `sections` | Array<section> | No | `[]` | An array of objects. Each object in the array represents a section. |
