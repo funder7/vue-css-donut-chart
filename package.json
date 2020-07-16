@@ -17,6 +17,8 @@
   "module": "dist/vcdonut.common.js",
   "unpkg": "dist/vcdonut.umd.min.js",
   "dependencies": {
+    "@babel/runtime": "^7.10.5",
+    "babel-runtime": "^6.26.0",
     "core-js": "^3.6.5",
     "regenerator-runtime": "^0.13.5",
     "vue": "^2.6.11"
@@ -24,6 +26,7 @@
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
+    "@babel/runtime-corejs3": "^7.10.5",
     "@vue/cli-plugin-babel": "^4.4.6",
     "@vue/cli-plugin-eslint": "^4.4.6",
     "@vue/cli-plugin-unit-jest": "^4.4.6",
