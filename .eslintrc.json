@@ -3,7 +3,7 @@
     "plugin:vue/essential",
     "airbnb-base"
   ],
-  "parser": "babel-eslint",
+  "parser": "vue-eslint-parser",
   "rules": {
     "comma-dangle": "off",
     "prefer-arrow-callback": "off",
