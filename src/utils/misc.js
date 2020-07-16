@@ -42,6 +42,7 @@ const isObject = obj => !!obj && obj.constructor === Object;
 const sectionKeys = [
   { type: 'number', key: 'value', required: true },
   { key: 'label' },
+  { key: 'amount' },
   { key: 'color' }
 ];
 

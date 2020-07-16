@@ -62,7 +62,7 @@ export default {
     foreground: { type: String, default: '#eeeeee' },
 
     // sections of the donut, must have a `value` property
-    // other valid properties are `label` and `color` (default is `dodgerblue`)
+    // other valid properties are `label`, `amount` and `color` (default is `dodgerblue`)
     sections: {
       type: Array,
       default: () => [],
@@ -76,7 +76,7 @@ export default {
     },
     total: { type: Number, default: 100, validator: v => v > 0 },
     hasLegend: { type: Boolean, default: false },
-    showTotal: { type: Boolean, default: false },
+    showTotal: { type: Boolean, default: true },
     legendPlacement: {
       type: String,
       default: placement.BOTTOM,
