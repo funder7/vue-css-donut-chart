@@ -1,20 +1,20 @@
 module.exports = {
   presets: [
     [
-      "@babel/preset-env",
+      '@babel/preset-env',
       {
-        "useBuiltIns": "entry",
-        "corejs": 3
+        corejs: 3,
+        useBuiltIns: 'entry',
+        // https://jestjs.io/docs/en/getting-started#using-babel
+        targets: { node: 'current' }
       }
     ],
     '@vue/cli-plugin-babel/preset'
   ],
-  "plugins": [
+  plugins: [
     [
-      "@babel/plugin-transform-runtime",
-      {
-        "corejs": 3,
-      }
+      '@babel/plugin-transform-runtime',
+      { corejs: 3 }
     ]
   ]
 }
